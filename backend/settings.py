@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-vs0tl*ov)a6-k=0=gq!dm2ff_pjx+jxetcjb%ss!tfzdg^%a7y
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*', 'http://115.68.232.7/']
+ALLOWED_HOSTS = ['*', 'http://115.68.232.7/', 'localhost']
 
 
 # Application definition
@@ -58,7 +58,7 @@ MIDDLEWARE = [
 ]
 
 # CORS_ORIGIN_WHITELIST = ['http://127.0.0.1:3000']
-CORS_ORIGIN_WHITELIST = ['http://localhost:3000', 'http://localhost:8000', 'http://localhost:8080',]
+CORS_ORIGIN_WHITELIST = ['http://localhost:3000', 'http://localhost:8000', 'http://localhost:8080', 'localhost', 'http://115.68.232.7',]
 CORS_ALLOW_CREDENTIALS = True
 
 ROOT_URLCONF = 'backend.urls'
@@ -122,8 +122,16 @@ AUTH_PASSWORD_VALIDATORS = [
 
 
 # CORS_ORIGIN_WHITELIST = ['http://127.0.0.1:3000', 'http://localhost:3000', 'http://localhost:8080']
-CORS_ORIGIN_WHITELIST = ['http://0.0.0.0:3000', 'http://127.0.0.1:3000', 'http://localhost:3000']
-CORS_ALLOW_CREDENTIALS = True
+# CORS_ORIGIN_WHITELIST = ['http://0.0.0.0:3000', 'http://127.0.0.1:3000', 'http://localhost:3000', ]
+# CORS_ALLOW_CREDENTIALS = True
+# CORS_ALLOW_HEADERS = (
+#         'x-requested-with',
+#         'content-type',
+#         'accept',
+#         'origin',
+#         'authorization',
+#         'x-csrftoken'
+)
 
 
 LANGUAGE_CODE = 'en-us'
