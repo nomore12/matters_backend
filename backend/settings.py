@@ -131,7 +131,7 @@ AUTH_PASSWORD_VALIDATORS = [
 #         'origin',
 #         'authorization',
 #         'x-csrftoken'
-)
+# )
 
 
 LANGUAGE_CODE = 'en-us'
