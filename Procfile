@@ -1,0 +1,1 @@
+web: gunicorm backend.wsgi --log-file -
