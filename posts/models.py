@@ -1,5 +1,7 @@
 from fileinput import filename
+from this import d
 from django.db import models
+from datetime import datetime
 
 # Create your models here.
 
@@ -16,16 +18,16 @@ post_type_choices = [
 
 class Post(models.Model):
     title = models.CharField(max_length=128)
+    sudtitle = models.CharField(max_length=256)
+    location = models.CharField(max_length=128)
     created_at = models.DateTimeField(auto_now=True)
     updated_at = models.DateTimeField(auto_now_add=True)
+    from_date = models.DateField(auto_now=False, blank=True)
+    to_date = models.DateField(auto_now=False, blank=True)
     description = models.TextField()
     main_image = models.ImageField(blank=True, upload_to="main")
     thumbnail = models.ImageField(blank=True, upload_to="thumbnail")
     post_type = models.CharField(max_length=32, choices=post_type_choices)
-
-    # def save(self, *args, **kwargs):
-    #     if self.main_image is not None:
-    #         saved_image = self.main_image
 
     def __str__(self):
         return self.title
