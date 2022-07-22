@@ -31,3 +31,8 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class ImageModel(models.Model):
+    image = models.ImageField(blank=True, upload_to="main")
+    post = models.ForeignKey(Post, on_delete=models.CASCADE)

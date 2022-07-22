@@ -1,9 +1,11 @@
+import imghdr
 from pipes import Template
 from django.shortcuts import render
 from django.http import HttpRequest, HttpResponse
-from .models import Post
+from .models import Post, ImageModel
 from django.conf import settings
 from django.core import serializers
+import json
 
 
 def get_post_lists(request):
@@ -15,8 +17,17 @@ def get_post_lists(request):
 
 def get_post(request, post_id):
     if request.method == 'GET':
-        print(request, post_id)
         post = Post.objects.filter(pk=post_id)
+        images = list(ImageModel.objects.filter(post=post_id).values())
+        # images_json = serializers.serialize('json', images)
+        # post_images = serializers.serialize('json',images)
         json_post = serializers.serialize('json', post)
-        print(f"json {json_post}")
+        
+        print(images, json_post)
+        print(type(json_post))
+        
+        result = json.loads(json_post)
+        print(type(json_post))
+        print(result)
+        
         return HttpResponse(json_post)

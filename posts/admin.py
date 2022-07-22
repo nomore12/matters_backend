@@ -1,6 +1,10 @@
 from django.contrib import admin
-from .models import Post
+from .models import Post, ImageModel
 
+
+# @admin.register(ImageModel)
+class ImageAdmin(admin.StackedInline):
+    model = ImageModel
 
 @admin.register(Post)
 class PostAdmin(admin.ModelAdmin):
@@ -8,3 +12,6 @@ class PostAdmin(admin.ModelAdmin):
     link_display_link = ['title']
     list_search = ['title']
     list_filter = ['post_type']
+    inlines = [
+            ImageAdmin,
+        ]
