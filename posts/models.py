@@ -28,6 +28,7 @@ class Post(models.Model):
     main_image = models.ImageField(blank=True, upload_to="main")
     thumbnail = models.ImageField(blank=True, upload_to="thumbnail")
     post_type = models.CharField(max_length=32, choices=post_type_choices)
+    image_list = models.TextField(blank=True)
 
     def __str__(self):
         return self.title
