@@ -16,7 +16,11 @@ def get_post(request, post_id):
         images = ImageModel.objects.filter(post=post_id)
         json_post = serializers.serialize('json', post)
         image_posts = serializers.serialize('json', images)
-        result = [json_post, image_posts]
-        # result.append(json_post)
-        # result.append(image_posts)
-        return HttpResponse(result)
+        return HttpResponse(json_post)
+
+
+def get_detail_images(request, post_id):
+    if request.method == 'GET':
+        images = ImageModel.objects.filter(post=post_id)
+        json_images = serializers.serialize('json', images)
+        return HttpResponse(json_images)

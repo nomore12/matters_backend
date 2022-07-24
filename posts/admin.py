@@ -8,8 +8,9 @@ class ImageAdmin(admin.StackedInline):
 
 @admin.register(Post)
 class PostAdmin(admin.ModelAdmin):
-    list_display = ['title', 'post_type', 'description', 'created_at', 'updated_at', 'main_image']
+    list_display = ['title', 'post_type', 'created_at', 'updated_at']
     link_display_link = ['title']
+    exclude = ['main_image', 'image_list']
     list_search = ['title']
     list_filter = ['post_type']
     inlines = [
