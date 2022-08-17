@@ -21,7 +21,7 @@ from django.conf import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('posts/', include('posts.urls')),
-    path(r'^administation/static/$', include(static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)))
+    # path(r'^administation/static/$', include(static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)))
 ]
 
 if settings.DEBUG:
