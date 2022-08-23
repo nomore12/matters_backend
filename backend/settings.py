@@ -60,7 +60,7 @@ MIDDLEWARE = [
 ]
 
 # CORS_ORIGIN_WHITELIST = ['http://127.0.0.1:3000']
-CORS_ORIGIN_WHITELIST = ['http://localhost:3000', 'http://localhost:8000', 'http://localhost:8080', 'http://115.68.232.7',]
+CORS_ORIGIN_WHITELIST = ['http://localhost:3000', 'http://localhost:8000', 'http://localhost:8080', 'http://211.42.153.34',]
 CORS_ALLOW_CREDENTIALS = True
 
 ROOT_URLCONF = 'backend.urls'
