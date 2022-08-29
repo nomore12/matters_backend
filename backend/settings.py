@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-vs0tl*ov)a6-k=0=gq!dm2ff_pjx+jxetcjb%ss!tfzdg^%a7y
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*', 'http://115.68.232.7/', 'localhost', 'http://211.42.153.5/', 'http://massnmatters.com/']
+ALLOWED_HOSTS = ['*', 'http://115.68.232.7/', 'localhost', 'http://211.42.153.5/', 'http://massnmatters.com/', 'https://massnmatters.com', 'https://www.massnmatters.com',]
 
 
 # Application definition
@@ -60,7 +60,7 @@ MIDDLEWARE = [
 ]
 
 # CORS_ORIGIN_WHITELIST = ['http://127.0.0.1:3000']
-CORS_ORIGIN_WHITELIST = ['http://localhost:3000', 'http://localhost:8000', 'http://localhost:8080', 'http://211.42.153.34', 'http://massnmatters.com']
+CORS_ORIGIN_WHITELIST = ['http://localhost:3000', 'http://localhost:8000', 'http://localhost:8080', 'http://211.42.153.34', 'http://massnmatters.com', 'https://massnmatters.com', 'https://www.massnmatters.com',]
 CORS_ALLOW_CREDENTIALS = True
 
 ROOT_URLCONF = 'backend.urls'
